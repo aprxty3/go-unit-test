@@ -49,3 +49,11 @@ func TestHelloWorldAji(t *testing.T) {
 
 	fmt.Println("TestHelloWorldAji Done")
 }
+
+func TestMain(m *testing.M) {
+	// setup code
+	fmt.Println("Before Unit Test")
+	m.Run()
+	// teardown code
+	fmt.Println("After Unit Test")
+}
