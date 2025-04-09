@@ -57,3 +57,19 @@ func TestMain(m *testing.M) {
 	// teardown code
 	fmt.Println("After Unit Test")
 }
+
+func TestSubTest(t *testing.T) {
+	t.Run("Aji", func(t *testing.T) {
+		result := HelloWorld("Aji")
+		if result != "Hello Aji" {
+			t.Fatal("Result must be Hello Aji")
+		}
+	})
+
+	t.Run("Enr", func(t *testing.T) {
+		result := HelloWorld("Enr")
+		if result != "Hello Enr" {
+			t.Fatal("Result must be Hello Enr")
+		}
+	})
+}
