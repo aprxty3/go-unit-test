@@ -73,3 +73,22 @@ func TestSubTest(t *testing.T) {
 		}
 	})
 }
+
+func TestTableDriven(t *testing.T) {
+	tests := []struct {
+		name     string
+		age      int
+		expected string
+	}{
+		{name: "Aji", age: 20, expected: "Hello Aji"},
+		{name: "Enr", age: 30, expected: "Hello Enr"},
+	}
+
+	for _, test := range tests {
+		t.Run(test.name, func(t *testing.T) {
+			result := HelloWorld(test.name)
+			assert.Equal(t, test.expected, result, "Result must be "+test.expected)
+		})
+	}
+
+}
