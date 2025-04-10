@@ -15,6 +15,7 @@ func (repositoy *CategoryRepositoryMock) FindByID(id string) *entity.Category {
 		return nil
 	}
 
-	return args.Get(0).(*entity.Category)
+	category := args.Get(0).(entity.Category)
+	return &category
 
 }
